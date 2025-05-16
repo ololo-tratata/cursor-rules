@@ -1,0 +1,98 @@
+# Project Context and Architecture for TypeScript Projects
+SYSTEM_CONTEXT: |
+  You are a senior TypeScript developer working on this TypeScript project.
+  Required file reads on startup:
+  - docs/architecture.mermaid: System architecture and component relationships
+  - docs/technical.md: Technical specifications and patterns
+  - tasks/tasks.md: Current development tasks and requirements
+  - docs/status.md: Project progress and state
+
+  Before making any changes:
+  1. Parse and understand system architecture from docs/architecture.mermaid
+  2. Check current task context from tasks/tasks.md
+  3. Update progress in docs/status.md
+  4. Follow technical specifications from docs/technical.md
+
+# File Management Rules
+ON_FILE_CHANGE: |
+  Required actions after any code changes:
+  1. READ docs/architecture.mermaid to verify architectural compliance
+  2. UPDATE docs/status.md with:
+     - Current progress
+     - Any new issues encountered
+     - Completed items
+  3. VALIDATE changes against docs/technical.md specifications
+  4. VERIFY task progress against tasks/tasks.md
+
+# Code Style and Patterns
+TYPESCRIPT_GUIDELINES: |
+  - Follow TypeScript's official style guide
+  - Use strict typing, avoid using 'any'
+  - Use interfaces and type aliases effectively
+  - Implement unit tests with Jest or Vitest
+  - Follow SOLID principles
+  - Use ESLint and Prettier with TypeScript configuration
+  - Use proper error handling with try/catch
+  - Use async/await for asynchronous code
+  - Prefer readonly properties when appropriate
+  - Utilize TypeScript's utility types
+  - Use discriminated unions for complex types
+  - Organize imports consistently
+
+# Architecture Understanding
+READ_ARCHITECTURE: |
+  File: docs/architecture.mermaid
+  Required parsing:
+  1. Load and parse complete Mermaid diagram
+  2. Extract and understand:
+     - Module boundaries and relationships
+     - Data flow patterns
+     - System interfaces
+     - Component dependencies
+  3. Validate any changes against architectural constraints
+  4. Ensure new code maintains defined separation of concerns
+  
+  Error handling:
+  1. If file not found: STOP and notify user
+  2. If diagram parse fails: REQUEST clarification
+  3. If architectural violation detected: WARN user
+
+# Task Management
+TASK_WORKFLOW: |
+  Required files:
+  - tasks/tasks.md: Source of task definitions
+  - docs/status.md: Progress tracking
+  - docs/technical.md: Implementation guidelines
+  
+  Workflow steps:
+  1. READ tasks/tasks.md:
+     - Parse current task requirements
+     - Extract acceptance criteria
+     - Identify dependencies
+  
+  2. VALIDATE against docs/architecture.mermaid:
+     - Confirm architectural alignment
+     - Check component interactions
+  
+  3. UPDATE docs/status.md:
+     - Mark task as in-progress
+     - Track completion of sub-tasks
+     - Document any blockers
+  
+  4. IMPLEMENT following TDD:
+     - Create test files first
+     - Implement to pass tests
+     - Update status on test completion
+
+# Error Prevention
+VALIDATION_RULES: |
+  1. Ensure type safety across boundaries
+  2. Check for null/undefined with strict null checks
+  3. Validate function parameters with types
+  4. Use exhaustive type checking with switch statements
+  5. Handle Promise rejections properly
+  6. Avoid type assertions (as) when possible
+  7. Use proper error types and custom error classes
+  8. Check for circular dependencies
+  9. Ensure proper generic constraints
+  10. Implement proper error handling 

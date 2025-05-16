@@ -1,0 +1,35 @@
+graph TD
+    A[API Layer] --> B[Service Layer]
+    A --> C[Authentication]
+    B --> D[Repository Layer]
+    D --> E[(Database)]
+    B --> F[External Services]
+    
+    G[Task Queue] --> B
+    G --> H[Background Workers]
+    
+    subgraph Core Modules
+        B
+        D
+    end
+    
+    subgraph Infrastructure
+        E
+        F
+        G
+        H
+    end
+    
+    subgraph API
+        A
+        C
+    end
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#bfb,stroke:#333,stroke-width:2px
+    style F fill:#bfb,stroke:#333,stroke-width:2px
+    style G fill:#fbb,stroke:#333,stroke-width:2px
+    style H fill:#fbb,stroke:#333,stroke-width:2px 

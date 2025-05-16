@@ -1,0 +1,48 @@
+graph TD
+    A[API Gateway] --> B[Auth Module]
+    A --> C[User Module]
+    A --> D[Product Module]
+    
+    B --> E[(Auth DB)]
+    C --> F[(User DB)]
+    D --> G[(Product DB)]
+    
+    H[Event Bus] --> B
+    H --> C
+    H --> D
+    
+    I[GraphQL Layer] --> A
+    J[REST API Layer] --> A
+    
+    subgraph Backend Core
+        A
+        H
+    end
+    
+    subgraph Feature Modules
+        B
+        C
+        D
+    end
+    
+    subgraph API Interfaces
+        I
+        J
+    end
+    
+    subgraph Persistence
+        E
+        F
+        G
+    end
+    
+    style A fill:#f9f,stroke:#333,stroke-width:4px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#bfb,stroke:#333,stroke-width:2px
+    style F fill:#bfb,stroke:#333,stroke-width:2px
+    style G fill:#bfb,stroke:#333,stroke-width:2px
+    style H fill:#fbb,stroke:#333,stroke-width:2px
+    style I fill:#fcf,stroke:#333,stroke-width:2px
+    style J fill:#fcf,stroke:#333,stroke-width:2px 

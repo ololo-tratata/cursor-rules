@@ -1,0 +1,46 @@
+graph TD
+    A[Frontend App] --> B[UI Components]
+    A --> C[State Management]
+    A --> D[API Client]
+    
+    D --> E[Backend API]
+    
+    C --> F[Store]
+    C --> G[Actions]
+    C --> H[Reducers]
+    
+    B --> I[Pages]
+    B --> J[Shared Components]
+    
+    K[Router] --> I
+    
+    subgraph Frontend Core
+        C
+        F
+        G
+        H
+    end
+    
+    subgraph UI Layer
+        B
+        I
+        J
+        K
+    end
+    
+    subgraph Data Layer
+        D
+        E
+    end
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#fbb,stroke:#333,stroke-width:2px
+    style E fill:#fbb,stroke:#333,stroke-width:2px
+    style F fill:#bfb,stroke:#333,stroke-width:2px
+    style G fill:#bfb,stroke:#333,stroke-width:2px
+    style H fill:#bfb,stroke:#333,stroke-width:2px
+    style I fill:#bbf,stroke:#333,stroke-width:2px
+    style J fill:#bbf,stroke:#333,stroke-width:2px
+    style K fill:#bbf,stroke:#333,stroke-width:2px 

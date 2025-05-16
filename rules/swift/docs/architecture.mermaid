@@ -1,0 +1,70 @@
+graph TD
+    A[App Coordinator] --> B[Auth Flow]
+    A --> C[Main Flow]
+    A --> D[Settings Flow]
+    
+    B --> E[Login View]
+    B --> F[Registration View]
+    
+    C --> G[Home View]
+    C --> H[Detail View]
+    C --> I[Profile View]
+    
+    D --> J[Settings View]
+    D --> K[About View]
+    
+    L[Core Data Manager] --> M[(Local Storage)]
+    N[API Client] --> O[Backend API]
+    
+    P[State Management] --> L
+    P --> N
+    
+    G --> P
+    H --> P
+    I --> P
+    J --> P
+    
+    subgraph UI Layer
+        E
+        F
+        G
+        H
+        I
+        J
+        K
+    end
+    
+    subgraph Data Layer
+        L
+        N
+        P
+    end
+    
+    subgraph Navigation
+        A
+        B
+        C
+        D
+    end
+    
+    subgraph External
+        M
+        O
+    end
+    
+    style A fill:#f9f,stroke:#333,stroke-width:3px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#ddf,stroke:#333,stroke-width:1px
+    style F fill:#ddf,stroke:#333,stroke-width:1px
+    style G fill:#ddf,stroke:#333,stroke-width:1px
+    style H fill:#ddf,stroke:#333,stroke-width:1px
+    style I fill:#ddf,stroke:#333,stroke-width:1px
+    style J fill:#ddf,stroke:#333,stroke-width:1px
+    style K fill:#ddf,stroke:#333,stroke-width:1px
+    style L fill:#bfb,stroke:#333,stroke-width:2px
+    style M fill:#bfb,stroke:#333,stroke-width:2px
+    style N fill:#bfb,stroke:#333,stroke-width:2px
+    style O fill:#fbb,stroke:#333,stroke-width:2px
+    style P fill:#fcf,stroke:#333,stroke-width:2px 
